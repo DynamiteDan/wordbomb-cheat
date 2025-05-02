@@ -17,3 +17,5 @@ make sure when installing tesseract it is installed to your PATH
 works for all wordbomb-esque games
 
 roblox might be a little bit of a problem since the prompt appears in two places, working on a fix
+
+F8 to auto type, make sure game window is focused
