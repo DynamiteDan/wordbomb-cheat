@@ -19,3 +19,7 @@ Has been optimized for consolas font, so uppercase "I"s are not confused for low
 This project has been reignited to update the code, create a cleaner ui, and compile it into a single .exe
 
 I currently expect this to take a maximum of 2-3 days since the code is relatively short and optimizations are relatively simple.
+
+
+This software bundles Tesseract OCR, licensed under the Apache License 2.0.
+Copyright © Google and contributors
