@@ -1,7 +1,3 @@
-Perfect — badges at the top instantly make a GitHub project look active, polished, and easier to scan. Here’s your README with **professional badges** added:
-
----
-
 # WordBomb OCR Assistant
 
 *A Python + Tesseract OCR tool for automating word detection in the Discord game WordBomb*
@@ -11,15 +7,11 @@ Perfect — badges at the top instantly make a GitHub project look active, polis
 [![Issues](https://img.shields.io/github/issues/DynamiteDan/wordbomb-cheat)](https://github.com/DynamiteDan/wordbomb-cheat/issues)
 [![Stars](https://img.shields.io/github/stars/DynamiteDan/wordbomb-cheat?style=social)](https://github.com/DynamiteDan/wordbomb-cheat/stargazers)
 
----
-
 ## Overview
 
 This project is a WordBomb cheat that uses **Tesseract OCR** to detect the letter prompts in-game and automatically suggest words from a dictionary. It can also auto-type the best match with a single key press (`F8`).
 
 It was built as a **personal passion project** and is not guaranteed to be actively maintained. The code is open-source, so you are free to fork and extend it.
-
----
 
 ## Features
 
@@ -30,8 +22,6 @@ It was built as a **personal passion project** and is not guaranteed to be activ
 * Modern CustomTkinter UI with status indicators
 * Custom dictionary loading (TXT word lists)
 * Optional image saving for debugging OCR results
-
----
 
 ## Installation
 
@@ -52,7 +42,6 @@ It was built as a **personal passion project** and is not guaranteed to be activ
    * Windows builds: [UB Mannheim Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
    * Either add `tesseract.exe` to your PATH or place it in `vendor/tesseract/`.
 
----
 
 ## Usage
 
@@ -70,24 +59,18 @@ python app.py
 * Start Live OCR → continuously detect prompts
 * Press **F8** → auto-type the current best word
 
----
-
 ## Notes
 
 * Bundles **Tesseract OCR (Apache License 2.0)** — copyright © Google and contributors.
 * Currently requires you to supply your own dictionary (`.txt`). A sample is included.
 * A compiled `.exe` release is planned so Tesseract is bundled automatically.
 
----
-
 ## Disclaimer
 
-This was created as a **fun project**.
+This was created as a **passion project**.
 
 * It is not intended to be used to ruin other players’ experiences in real games.
 * Use responsibly — I am not responsible for how you choose to use it.
-
----
 
 ## Roadmap
 
@@ -96,12 +79,7 @@ This was created as a **fun project**.
 * [ ] Bundle Tesseract into `.exe` with PyInstaller
 * [ ] Add packaged releases with wordlists
 
----
-
 ## License
 
 This project bundles **Tesseract OCR**, licensed under the **Apache License 2.0**.
 Please see the [LICENSE](LICENSE.md) file for details.
-
----
-
