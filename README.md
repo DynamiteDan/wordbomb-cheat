@@ -1,6 +1,6 @@
 Basic little cheat for WordBomb 
 
-I've only used it in games with friends to troll; I don't advise using it in real games, but that's the exact reason you're here.
+I've only used it in games with friends to troll; I don't advise using it in real games, but I'm guessing that's the exact reason you're here.
 
 Before anyone asks "oH wHy DiD yOu mAkE a cHeAt tHen":
 
