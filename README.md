@@ -15,13 +15,15 @@ It was built as a **personal passion project** and is not guaranteed to be activ
 
 ## Features
 
-* Dual OCR regions (Region A required, Region B optional) to support the Roblox version
-* Optimized Tesseract OCR pipeline (custom configs + character correction for I/L confusion)
-* Fast dictionary matching using 2- and 3-gram indexing
-* Auto-typing of best match via `F8` hotkey
-* Modern CustomTkinter UI with status indicators
-* Custom dictionary loading (TXT word lists)
-* Optional image saving for debugging OCR results
+* Modern **CustomTkinter dark dashboard UI**
+* Two OCR regions: **Region A (required)**, **Region B (optional)**
+* Supports **2- and 3-letter prompts** with fast n-gram indexing
+* Intelligent **OCR caching** to avoid redundant scans
+* **Auto-correction heuristics** for common misreads (I/l, O/U, etc.)
+* **Top-K word suggestions** with clickable buttons
+* **F8 hotkey** to instantly auto-type the best suggestion
+* Dictionary loader (`.txt` file, one word per line)
+* Live OCR loop with adjustable interval
 
 ## Installation
 
