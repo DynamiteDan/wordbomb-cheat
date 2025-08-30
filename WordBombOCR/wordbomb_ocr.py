@@ -1,4 +1,4 @@
-# WordBomb OCR Cheat (Windows, CustomTkinter, PyInstaller‑ready)
+# WordBomb OCR Cheat
 # --------------------------------------------------------------------------------------
 # Modern dark dashboard UI with CustomTkinter
 # - Two OCR regions: A is REQUIRED, B is OPTIONAL (used only if set)
@@ -7,22 +7,6 @@
 # - OCR caching to skip redundant recognitions between frames
 # - Robust startup (no pre‑UI popups), helpful status bar, safe threading
 # - Hard‑pins Tesseract paths and passes --tessdata-dir to avoid model errors
-# - PyInstaller notes at bottom
-#
-# Dependencies
-#   pip install pillow pytesseract pyautogui pynput customtkinter
-#
-# Project layout for bundling
-#   project_root/
-#     wordbomb_ocr.py  (this file)
-#     vendor/
-#       tesseract/
-#         tesseract.exe
-#         tessdata/
-#           eng.traineddata
-#           ... (other languages if needed)
-#     LICENSE   (Apache‑2.0, optional but recommended)
-#     NOTICE.txt (optional attribution)
 
 import os
 import sys
@@ -349,10 +333,10 @@ def render_suggestions(word_matches):
             ctk.CTkButton(
                 words_frame,
                 text=f"📝 {w}",
-                width=280,  # Reduced width to fit better
+                width=280,
                 font=(FONT_FAMILY, 12),  # Added Satoshi font
                 command=lambda ww=w: threading.Thread(target=type_text, args=(ww,), daemon=True).start()
-            ).pack(pady=3, padx=8, fill='x')  # Added horizontal padding
+            ).pack(pady=3, padx=8, fill='x')  
 
 def fmt_region(r):
     if None in r.values():
@@ -546,28 +530,28 @@ def build_ui():
 
     root = ctk.CTk()
     root.title("WordBomb OCR — Dashboard")
-    root.geometry("800x600")  # Optimized size for better UI fit
-    root.minsize(700, 500)     # Minimum size to prevent UI cutoff
+    root.geometry("800x600") 
+    root.minsize(700, 500)    
     root.attributes('-topmost', True)
 
     # Layout: Sidebar + Main
-    root.grid_columnconfigure(0, weight=0, minsize=250)  # Dynamic sidebar width with larger minimum
-    root.grid_columnconfigure(1, weight=1, minsize=600)  # Minimum main content width
+    root.grid_columnconfigure(0, weight=0, minsize=250) 
+    root.grid_columnconfigure(1, weight=1, minsize=600) 
     root.grid_rowconfigure(0, weight=1)
 
     # Sidebar
-    sidebar = ctk.CTkFrame(root, corner_radius=12)  # Dynamic width based on content
-    sidebar.grid(row=0, column=0, sticky="nsw", padx=16, pady=12)  # Increased left padding
-    sidebar.grid_columnconfigure(0, weight=1)  # Allow sidebar to expand
+    sidebar = ctk.CTkFrame(root, corner_radius=12) 
+    sidebar.grid(row=0, column=0, sticky="nsw", padx=16, pady=12)  
+    sidebar.grid_columnconfigure(0, weight=1) 
 
-    ctk.CTkLabel(sidebar, text="WordBomb OCR", font=(FONT_FAMILY, 20, "bold")).pack(pady=(8,16), padx=16)  # Added horizontal padding
+    ctk.CTkLabel(sidebar, text="WordBomb OCR", font=(FONT_FAMILY, 20, "bold")).pack(pady=(8,16), padx=16) 
     btn_start = ctk.CTkButton(sidebar, text="▶ Start OCR", command=start_live_ocr, font=(FONT_FAMILY, 12))
-    btn_start.pack(pady=6, padx=16, fill='x')  # Increased horizontal padding
+    btn_start.pack(pady=6, padx=16, fill='x')
     btn_stop = ctk.CTkButton(sidebar, text="⏹ Stop OCR", command=stop_live_ocr, font=(FONT_FAMILY, 12))
     btn_stop.pack(pady=6, padx=16, fill='x')
     ctk.CTkButton(sidebar, text="📚 Load Dictionary", command=load_dictionary, font=(FONT_FAMILY, 12)).pack(pady=6, padx=16, fill='x')
     
-    # Dictionary status label
+
     label_dict = ctk.CTkLabel(sidebar, text="No dictionary loaded", font=(FONT_FAMILY, 11))
     label_dict.pack(pady=(4,12), padx=16)
 
@@ -591,24 +575,24 @@ def build_ui():
 
     # Main content
     main = ctk.CTkFrame(root, corner_radius=12)
-    main.grid(row=0, column=1, sticky="nsew", padx=8, pady=12)  # Reduced left padding to bring closer to sidebar
+    main.grid(row=0, column=1, sticky="nsew", padx=8, pady=12)
     main.grid_columnconfigure(0, weight=1)
     main.grid_rowconfigure(5, weight=1)
 
-    header = ctk.CTkLabel(main, text="Overview", font=(FONT_FAMILY, 24, "bold"))  # Reduced font size
-    header.grid(row=0, column=0, sticky="w", padx=16, pady=(8,10))  # Reduced padding
+    header = ctk.CTkLabel(main, text="Overview", font=(FONT_FAMILY, 24, "bold")) 
+    header.grid(row=0, column=0, sticky="w", padx=16, pady=(8,10))
 
     ctl_line = ctk.CTkFrame(main, fg_color="transparent")
     ctl_line.grid(row=1, column=0, sticky="ew", padx=16, pady=6)
     ctk.CTkLabel(ctl_line, text="Min length:", font=(FONT_FAMILY, 12)).pack(side="left")
-    length_entry = ctk.CTkEntry(ctl_line, width=50, font=(FONT_FAMILY, 11))  # Reduced width
+    length_entry = ctk.CTkEntry(ctl_line, width=50, font=(FONT_FAMILY, 11))
     length_entry.insert(0, "1")
     length_entry.pack(side="left", padx=6)
     ctk.CTkButton(ctl_line, text="Capture once", command=lambda: capture_and_match_once(max(1, int(length_entry.get() or 1))), font=(FONT_FAMILY, 11)).pack(side="left", padx=6)
     ctk.CTkButton(ctl_line, text="🔧 Force Auto-Correct", command=force_auto_correct, font=(FONT_FAMILY, 11)).pack(side="left", padx=6)
 
-    label_output = ctk.CTkLabel(main, text="Prompt: ", font=(FONT_FAMILY, 16))  # Reduced font size
-    label_output.grid(row=2, column=0, sticky="nw", padx=16, pady=6)  # Reduced padding
+    label_output = ctk.CTkLabel(main, text="Prompt: ", font=(FONT_FAMILY, 16)) 
+    label_output.grid(row=2, column=0, sticky="nw", padx=16, pady=6) 
 
     # Control buttons row
     ctrl_buttons = ctk.CTkFrame(main, fg_color="transparent")
@@ -616,14 +600,14 @@ def build_ui():
     ctk.CTkButton(ctrl_buttons, text="🗑️ Clear Used Words", command=clear_used_words, font=(FONT_FAMILY, 11)).pack(side="left", padx=(0,6))
     ctk.CTkButton(ctrl_buttons, text="🔤 Clear Alphabet", command=lambda: (typed_history.clear(), update_used_letters_display()), font=(FONT_FAMILY, 11)).pack(side="left", padx=6)
 
-    used_letters_label = ctk.CTkLabel(main, text="Used: ", font=(FONT_FAMILY, 12))  # Reduced font size
-    used_letters_label.grid(row=4, column=0, sticky="nw", padx=16, pady=4)  # Reduced padding
+    used_letters_label = ctk.CTkLabel(main, text="Used: ", font=(FONT_FAMILY, 12))  
+    used_letters_label.grid(row=4, column=0, sticky="nw", padx=16, pady=4) 
 
     words_frame = ctk.CTkFrame(main, corner_radius=10)
-    words_frame.grid(row=5, column=0, sticky="nsew", padx=16, pady=8)  # Reduced padding
+    words_frame.grid(row=5, column=0, sticky="nsew", padx=16, pady=8) 
 
-    status_label = ctk.CTkLabel(main, text="Status: Ready", font=(FONT_FAMILY, 11))  # Updated font
-    status_label.grid(row=6, column=0, sticky="nw", padx=16, pady=8)  # Reduced padding
+    status_label = ctk.CTkLabel(main, text="Status: Ready", font=(FONT_FAMILY, 11)) 
+    status_label.grid(row=6, column=0, sticky="nw", padx=16, pady=8) 
 
     # Initialize labels
     update_region_labels()
@@ -650,19 +634,3 @@ if __name__ == "__main__":
     kb_listener.start()
 
     root.mainloop()
-
-# ---------------------
-# PyInstaller Build Notes (Windows)
-# ---------------------
-# From project root, run:
-#   pyinstaller --onefile wordbomb_ocr.py ^
-#     --add-binary "vendor\tesseract\tesseract.exe;vendor\tesseract" ^
-#     --add-data   "vendor\tesseract\tessdata;vendor\tesseract\tessdata"
-#
-# What to bundle:
-#   - Required: tesseract.exe, tessdata\*.traineddata, and any DLLs alongside tesseract.exe
-#   - NOT required: "doc" folder, samples, training tools
-#
-# Licensing:
-#   - Include Apache‑2.0 license text in your distribution (e.g., LICENSE)
-#   - Optional: add NOTICE.txt stating that Tesseract OCR is bundled
