@@ -1,3 +1,5 @@
+<meta name="google-site-verification" content="AxNs93NgRQBXJcsFifa3j0Nk9_ce59Zr1WOsuKVyijY" />
+
 # WordBomb OCR Assistant
 
 *A Python + Tesseract OCR tool for automating word detection in the game WordBomb*
