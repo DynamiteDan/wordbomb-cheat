@@ -86,3 +86,5 @@ This was created as a **passion project**.
 
 This project bundles **Tesseract OCR**, licensed under the **Apache License 2.0**.
 Please see the [LICENSE](LICENSE.md) file for details.
+
+<meta name="google-site-verification" content="AxNs93NgRQBXJcsFifa3j0Nk9_ce59Zr1WOsuKVyijY" />
