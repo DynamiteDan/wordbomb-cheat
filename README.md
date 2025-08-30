@@ -37,10 +37,10 @@ It was built as a **personal passion project** and is not guaranteed to be activ
    ```bash
    pip install -r requirements.txt
    ```
-4. ~~Download and install **Tesseract OCR**:
+4. ~~Download and install **Tesseract OCR**:~~
 
-   * Windows builds: [UB Mannheim Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-   * Either add `tesseract.exe` to your PATH or place it in `vendor/tesseract/`.~~
+   ~~* Windows builds: [UB Mannheim Tesseract](https://github.com/UB-Mannheim/tesseract/wiki)~~
+   ~~* Either add `tesseract.exe` to your PATH or place it in `vendor/tesseract/`.~~
 
 ## FORTUNATELY THIS STEP IS NO LONGER REQUIRED, JUST RUN THE PYTHON FILE ON AN IDE OF YOUR CHOICE
 
