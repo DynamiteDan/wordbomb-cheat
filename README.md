@@ -1,5 +1,4 @@
-# This software bundles Tesseract OCR, licensed under the Apache License 2.0.
-# Copyright © Google and contributors
+# This software bundles Tesseract OCR, licensed under the Apache License 2.0. Copyright © Google and contributors
 
 
 Basic little cheat for WordBomb 
