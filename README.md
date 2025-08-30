@@ -1,6 +1,6 @@
 # WordBomb OCR Assistant
 
-*A Python + Tesseract OCR tool for automating word detection in the Discord game WordBomb*
+*A Python + Tesseract OCR tool for automating word detection in the game WordBomb*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -15,7 +15,7 @@ It was built as a **personal passion project** and is not guaranteed to be activ
 
 ## Features
 
-* Dual OCR regions (Region A required, Region B optional)
+* Dual OCR regions (Region A required, Region B optional) to support the Roblox version
 * Optimized Tesseract OCR pipeline (custom configs + character correction for I/L confusion)
 * Fast dictionary matching using 2- and 3-gram indexing
 * Auto-typing of best match via `F8` hotkey
@@ -29,8 +29,8 @@ It was built as a **personal passion project** and is not guaranteed to be activ
 2. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/wordbomb-ocr-assistant.git
-   cd wordbomb-ocr-assistant
+   git clone https://github.com/DynamiteDan/wordbomb-cheat.git
+   cd wordbomb-cheat
    ```
 3. Install dependencies:
 
